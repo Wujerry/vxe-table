@@ -7,7 +7,9 @@ export default {
     ctxMenuOpts: Object
   },
   mounted () {
-    document.body.appendChild(this.$el)
+    let $mountNode = document.querySelector('.patient-hover-bar')
+    if (!$mountNode) $mountNode = document.body
+    $mountNode.appendChild(this.$el)
   },
   beforeDestroy () {
     const { $el } = this
